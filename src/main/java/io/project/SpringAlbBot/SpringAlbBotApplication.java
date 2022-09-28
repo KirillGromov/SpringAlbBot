@@ -10,5 +10,4 @@ public class SpringAlbBotApplication {
 		SpringApplication.run(SpringAlbBotApplication.class, args);
 	}
 
-
 }

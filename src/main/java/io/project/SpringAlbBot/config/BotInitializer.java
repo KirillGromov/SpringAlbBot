@@ -15,7 +15,6 @@ public class BotInitializer {
     @Autowired
     TelegramBot bot;
 
-
     @EventListener({ContextRefreshedEvent.class})
     public void init() throws TelegramApiException{
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
