@@ -8,6 +8,7 @@ class SpringAlbBotApplicationTests {
 
 	@Test
 	void contextLoads() {
+
 	}
 
 }
