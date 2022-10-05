@@ -79,6 +79,10 @@ public class TelegramBot extends TelegramLongPollingBot {
                 case "/help":
                     sendMessage(chatId, HELP_TEXT);
                     break;
+
+                case "/dd":
+                    sendMessage(chatId, HELP_TEXT);
+                    break;
                 default:
                     sendMessage(chatId, "Sorry, command was not recognized!");
             }
@@ -102,6 +106,7 @@ public class TelegramBot extends TelegramLongPollingBot {
             user.setRegisteredAt(new Timestamp(System.currentTimeMillis()));
 
             userRepository.save(user);
+
             log.info("User saved " + user);
         }
 
@@ -127,6 +132,17 @@ public class TelegramBot extends TelegramLongPollingBot {
         } catch (TelegramApiException e) {
             log.error("Error occurred: " + e.getMessage());
         }
+    }
+
+    private void getDamageDiller(long chatID){
+
+
+        var build = userRepository.findAll();
+
+        String otvet = "" + build;
+
+        sendMessage(chatID, otvet);
+
     }
 
 }
