@@ -3,6 +3,7 @@ package io.project.SpringAlbBot.service;
 
 import com.vdurmont.emoji.EmojiParser;
 import io.project.SpringAlbBot.config.BotConfig;
+import io.project.SpringAlbBot.model.BuildRepository;
 import io.project.SpringAlbBot.model.User;
 import io.project.SpringAlbBot.model.UserRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -29,6 +30,9 @@ public class TelegramBot extends TelegramLongPollingBot {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private BuildRepository buildRepository;
     static final String HELP_TEXT = "This bot is created to demonstrate Spring capabilities\n\n" +
             "You can execute command from the domain menu  on the left or by taping a command:\n\n" +
             "Type /start to see a welcome message\n\n" +
@@ -140,6 +144,7 @@ public class TelegramBot extends TelegramLongPollingBot {
         var build = userRepository.findAll();
 
         String otvet = "" + build;
+        buildRepository.getBuilds();
 
         sendMessage(chatID, otvet);
 
