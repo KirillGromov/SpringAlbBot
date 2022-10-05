@@ -85,7 +85,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                     break;
 
                 case "/dd":
-                    sendMessage(chatId, HELP_TEXT);
+                    getDamageDiller(chatId);
                     break;
                 default:
                     sendMessage(chatId, "Sorry, command was not recognized!");
@@ -144,9 +144,10 @@ public class TelegramBot extends TelegramLongPollingBot {
         var build = userRepository.findAll();
 
         String otvet = "" + build;
-        buildRepository.getBuilds();
+        var list = buildRepository.getBuilds("dd");
 
-        sendMessage(chatID, otvet);
+
+        sendMessage(chatID, "");
 
     }
 

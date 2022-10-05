@@ -11,9 +11,9 @@ public class CastomBuilds implements CostomizedBuild{
     private EntityManager em;
 
 
-    public List getBuilds(){
+    public List getBuilds(String item){
 
-        return em.createQuery("from Employees where salary = (select max(salary) from Employees )", Build.class)
+        return em.createQuery("from Employees where classBuild = " + item, Build.class)
                 .getResultList();
     }
 }

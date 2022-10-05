@@ -4,5 +4,5 @@ import java.util.List;
 
 public interface CostomizedBuild<Build> {
 
-    List<Build> getBuilds();
+    List<Build> getBuilds(String item);
 }
