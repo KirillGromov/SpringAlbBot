@@ -11,23 +11,44 @@ public class Build {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-
-    private String classBuild;
-
     private String head;
-
     private String body;
-
     private String legs;
-
     private String cloak;
 
+    private String weapon_1;
+
+    private String weapon_2;
+    private String elixir;
     private String food;
 
-    private String elixir;
+    private String groupSize;
+    private String classBuild;
 
-    private String size;
 
+    public String getWeapon_1() {
+        return weapon_1;
+    }
+
+    public void setWeapon_1(String weapon_1) {
+        this.weapon_1 = weapon_1;
+    }
+
+    public String getWeapon_2() {
+        return weapon_2;
+    }
+
+    public void setWeapon_2(String weapon_2) {
+        this.weapon_2 = weapon_2;
+    }
+
+    public String getGroupSize() {
+        return groupSize;
+    }
+
+    public void setGroupSize(String groupSize) {
+        this.groupSize = groupSize;
+    }
 
     public long getId() {
         return id;
@@ -94,11 +115,11 @@ public class Build {
     }
 
     public String getSize() {
-        return size;
+        return groupSize;
     }
 
     public void setSize(String size) {
-        this.size = size;
+        this.groupSize = size;
     }
 
 
@@ -106,16 +127,16 @@ public class Build {
     public String toString() {
         return "Build{" +
                 "id=" + id +
-                ", classBuild='" + classBuild + '\'' +
                 ", head='" + head + '\'' +
                 ", body='" + body + '\'' +
                 ", legs='" + legs + '\'' +
                 ", cloak='" + cloak + '\'' +
-                ", food='" + food + '\'' +
+                ", weapon_1='" + weapon_1 + '\'' +
+                ", weapon_2='" + weapon_2 + '\'' +
                 ", elixir='" + elixir + '\'' +
-                ", size='" + size + '\'' +
+                ", food='" + food + '\'' +
+                ", groupSize='" + groupSize + '\'' +
+                ", classBuild='" + classBuild + '\'' +
                 '}';
     }
-
-
 }
